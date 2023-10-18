@@ -13,9 +13,15 @@ const BlogPage = async () => {
     const data = await getData();
     console.log(data);
     return (
-        <div>
+        <div className="container mx-auto">
+            <ol>
+                <li className="text-red-600">Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ol>
             {data.result.map((item) => (
-                <div key={item.id}>
+                <div key={item.id} className="customEditor">
                     <EditorOutput content={item.desc} />
                 </div>
             ))}

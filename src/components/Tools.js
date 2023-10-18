@@ -5,6 +5,7 @@ import Link from "@editorjs/link";
 import Delimiter from "@editorjs/delimiter";
 import CheckList from "@editorjs/checklist";
 import ImageTool from "@editorjs/image";
+import Table from "@editorjs/table";
 import axios from "axios";
 
 // Upload Image
@@ -34,7 +35,10 @@ export const EDITOR_JS_TOOLS = {
     },
     checkList: CheckList,
     list: List,
-    header: Header,
+    header: {
+        class: Header,
+        inlineToolbar: true,
+    },
     delimiter: Delimiter,
     link: Link,
     image: {
@@ -56,6 +60,14 @@ export const EDITOR_JS_TOOLS = {
                     }
                 },
             },
+        },
+    },
+    table: {
+        class: Table,
+        inlineToolbar: true,
+        config: {
+            rows: 2,
+            cols: 3,
         },
     },
 };
